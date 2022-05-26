@@ -1,0 +1,51 @@
+body {
+	background:#ccc;
+	font-size:0;
+}
+#settings {
+	position:fixed;
+	background:#eee;
+	padding:5px;
+	border-radius:5px;
+	border:solid 1px #ccc;
+}
+#settings input {
+	width:60px;
+}
+#chart {
+	border:solid 1px #000;
+}
+#chart td {
+	border:solid 1px #eee;
+	width:10px;
+	height:40px;
+}
+#chart td.border_top {
+	border-top-color:#000;
+}
+#chart td.border_left {
+	border-left-color:#000;
+}
+#chart td.border_right {
+	border-right-color:#000;
+}
+#chart td.border_bottom {
+	border-bottom-color:#000;
+}
+#chart td.middle_right {
+	border-right-color:#f88;
+}
+#chart td.border_right.middle_right {
+	border-right-color:#c00;
+}
+#chart td.middle_left {
+	border-left-color:#f88;
+}
+#chart td.border_left.middle_left {
+	border-left-color:#c00;
+}
+#chart tr:nth-child(even) {background: #bbf}
+#chart tr:nth-child(odd) {background: #fff}
+#chart tr:nth-child(even) td.toggled {background: #fff}
+#chart tr:nth-child(odd) td.toggled {background: #ddddff}
+
