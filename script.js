@@ -5,18 +5,17 @@ function resizeChart() {
 	cols = parseInt(document.getElementById('cols').value);
 	rows = parseInt(document.getElementById('rows').value);
 	initChart(cols, rows);
-	chart = document.getElementById('chart');
 
-	s = '';
-	for(var r = 0; r < rows; r++) {
+	let s = '';
+	for(let r = 0; r < rows; r++) {
 		s += '<tr>';
-		for(var c = 0; c < cols; c++) {
+		for(let c = 0; c < cols; c++) {
 			s += '<td id="cell[' + c + ',' + r + ']" onClick="toggleCell(' + c + ',' + r + ')"'
 			// middle mark
-			if(c == cols / 2 - 1) {
+			if(c === cols / 2 - 1) {
 				s += ' class="middle_right"';
 			}
-			if(c == cols / 2) {
+			if(c === cols / 2) {
 				s += ' class="middle_left"';
 			}
 			s += '></td>';
@@ -24,16 +23,16 @@ function resizeChart() {
 		}
 		s += '</tr>';
 	}
-	
-	chart.innerHTML = s;
+
+	document.getElementById('chart').innerHTML = s;
 }
 
 function initChart(cols, rows) {
 	cells = [];
 	
-	for(c = 0; c < cols; c++) {
+	for(let c = 0; c < cols; c++) {
 		cells[c] = [];
-		for(r = 0; r < rows; r++) {
+		for(let r = 0; r < rows; r++) {
 			cells[c][r] = 0;
 		}
 	}
@@ -87,18 +86,18 @@ function getCell(x, y) {
 }
 
 function checkDx(x, y, dx) {
-	neighbor = x + dx;
-	if (neighbor == -1 || neighbor == cols) {
-		return cells[x][y] == 1;
+	let neighbor = x + dx;
+	if (neighbor === -1 || neighbor === cols) {
+		return cells[x][y] === 1;
 	}
-	return cells[x][y] != cells[neighbor][y];
+	return cells[x][y] !== cells[neighbor][y];
 }
 
 function checkDy(x, y, dy) {
-	neighbor = y + dy;
-	if (neighbor == -1 || neighbor == rows) {
-		return cells[x][y] == 1;
+	let neighbor = y + dy;
+	if (neighbor === -1 || neighbor === rows) {
+		return cells[x][y] === 1;
 	}
-	return cells[x][y] != cells[x][neighbor];
+	return cells[x][y] !== cells[x][neighbor];
 }
 
