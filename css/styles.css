@@ -1,6 +1,5 @@
 body {
 	background:#ccc;
-	font-size:0;
 }
 #settings {
 	position:fixed;
@@ -9,8 +8,9 @@ body {
 	border-radius:5px;
 	border:solid 1px #ccc;
 }
-#settings input {
-	width:60px;
+#settings input[type="text"] {
+	text-align: right;
+	width:3em;
 }
 #chart {
 	border:solid 1px #000;
