@@ -32,6 +32,7 @@ body {
 #chart td.border_bottom {
 	border-bottom-color:#000;
 }
+
 #chart td.middle_right {
 	border-right-color:#f88;
 }
@@ -44,8 +45,7 @@ body {
 #chart td.border_left.middle_left {
 	border-left-color:#c00;
 }
-#chart tr:nth-child(even) {background: #bbf}
-#chart tr:nth-child(odd) {background: #fff}
-#chart tr:nth-child(even) td.toggled {background: #fff}
-#chart tr:nth-child(odd) td.toggled {background: #ddddff}
-
+#chart tr:nth-child(even) {background-color: #bbf}
+#chart tr:nth-child(odd) {background-color: #fff}
+#chart tr:nth-child(even) td.toggled {background-color: #fff}
+#chart tr:nth-child(odd) td.toggled {background-color: #ddddff}
