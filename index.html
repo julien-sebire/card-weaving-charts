@@ -6,11 +6,13 @@
 <body>
 
 <div id="settings">
-	<label for="cols">Cards</label><input type="text" id="cols" placeholder="Cards">
+	<label for="cols">Cards</label> <input type="text" id="cols" value="0">
 	<br>
-	<label for="rows">Rows</label><input type="text" id="rows" placeholder="Rows">
+	<label for="rows">Rows</label> <input type="text" id="rows" value="0">
 	<br>
-	<input type="button" value="ok" onClick="resizeChart();">
+	<input type="button" value="Resize" onClick="resizeChart();">
+	<br>
+	<input type="button" value="Save" onClick="saveChart();">
 </div>
 
 <table id="chart" align="center" cellspacing="0">
@@ -18,5 +20,6 @@
 
 </body>
 <script type="text/javascript" src="js/chart.js"></script>
+<script type="text/javascript" src="js/file.js"></script>
 </html>
 
