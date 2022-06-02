@@ -1,9 +1,21 @@
 cells = [];
 cols = 0;
 rows = 0;
+
+resizeChart();
+
 function resizeChart() {
+	document.getElementById('chart').innerHTML = createHtmlChart();
+}
+
+function createHtmlChart() {
 	cols = parseInt(document.getElementById('cols').value);
 	rows = parseInt(document.getElementById('rows').value);
+
+	if(cols === 0 || rows === 0) {
+		return '\t<tr><td style="white-space:nowrap;">&lt;&ndash; Please set sizes to begin.</td></tr>\n';
+	}
+
 	initChart(cols, rows);
 
 	let s = '';
@@ -24,7 +36,7 @@ function resizeChart() {
 		s += '</tr>';
 	}
 
-	document.getElementById('chart').innerHTML = s;
+	return s;
 }
 
 function initChart(cols, rows) {
