@@ -2,7 +2,7 @@ function saveChart() {
     let a = document.createElement('a');
     let bb = new Blob([JSON.stringify(chartToJson())],{type:'application/x-json'});
     a.href = window.URL.createObjectURL(bb);
-    a.download = 'untitled.cwc';
+    a.download = document.getElementById('filename').value + '.cwc';
     a.click();
 }
 
@@ -16,7 +16,7 @@ function loadChart() {
         }
         let reader = new FileReader();
         reader.onload = function(event) {
-            jsonToChart(event.target.result);
+            jsonToChart(event.target.result, file.name.replace('.cwc', ''));
         }
         reader.readAsText(file);
     };
@@ -35,7 +35,7 @@ function chartToJson() {
     }
 }
 
-function jsonToChart(contents) {
+function jsonToChart(contents, filename) {
     let values = JSON.parse(contents);
     if (values.version > version) {
         alert("The chart cannot be loaded with this version of CWC. Consider updating to version " + values.version + " or later.");
@@ -48,6 +48,7 @@ function jsonToChart(contents) {
 
     document.getElementById('cols').value = values.size.cols;
     document.getElementById('rows').value = values.size.rows;
+    document.getElementById('filename').value = filename;
     resizeChart();
     cells = values.cells;
     redrawChart();
