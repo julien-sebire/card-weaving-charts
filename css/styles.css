@@ -1,52 +1,157 @@
 body {
-	background:#ccc;
+    background: #eee;
+    color: #333;
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 100%;
+    position: relative;
+    padding: 0;
 }
-#settings {
-	position:fixed;
-	background:#eee;
-	padding:5px;
-	border-radius:5px;
-	border:solid 1px #ccc;
+
+header {
+    background: #666;
+    color: #ccc;
+    height: 30px;
+    margin: 0;
+    padding: 5px 10px 10px;
+    position: relative;
 }
-#settings input[type="text"] {
-	text-align: right;
-	width:3em;
+
+header p {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
 }
+
+header p a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+header ul {
+    display: inline-block;
+    margin: 0 0 5px 50px;
+    padding: 0;
+}
+
+header li {
+    border-radius: 5px 5px 0 0;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 24px;
+    margin: 0;
+    padding: 5px 5px 10px;
+    position: relative;
+}
+
+header li:hover {
+    background: #ccc;
+    box-shadow: #333 0 -1px 2px;
+    color: #666;
+}
+
+header p span {
+    display: block;
+}
+
+header li div {
+    background: #ccc;
+    border-radius: 0 5px 5px 5px;
+    box-shadow: #333 0 1px 2px;
+    color: #333;
+    display: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    left: 0;
+    padding: 5px;
+    position: absolute;
+    top: 35px;
+}
+
+header li:hover div {
+    display: block;
+}
+
+header li h3 {
+    border-bottom: 1px solid #666;
+    color: #666;
+    margin: 0 0 5px;
+    min-width: 100px;
+    text-align: left;
+}
+
+#sizes_menu div {
+    text-align: right;
+}
+
+#sizes_menu input[type="text"] {
+    width: 3em;
+}
+
+.menu_name {
+    border:1px solid #f66;
+    display:inline-block;
+    padding:2px 5px;
+}
+
 #chart {
-	border:solid 1px #000;
+    border: solid 1px #000;
+    border-spacing: 0;
+    margin: 10px auto;
 }
+
 #chart td {
-	border:solid 1px #eee;
-	width:10px;
-	height:40px;
+    border: solid 1px #eee;
+    height: 40px;
+    width: 10px;
 }
 
 #chart td.border_top {
-	border-top-color:#000;
+    border-top-color: #000;
 }
+
 #chart td.border_left {
-	border-left-color:#000;
+    border-left-color: #000;
 }
+
 #chart td.border_right {
-	border-right-color:#000;
+    border-right-color: #000;
 }
+
 #chart td.border_bottom {
-	border-bottom-color:#000;
+    border-bottom-color: #000;
 }
 
 #chart td.middle_right {
-	border-right-color:#f88;
+    border-right-color: #f88;
 }
+
 #chart td.border_right.middle_right {
-	border-right-color:#c00;
+    border-right-color: #c00;
 }
+
 #chart td.middle_left {
-	border-left-color:#f88;
+    border-left-color: #f88;
 }
+
 #chart td.border_left.middle_left {
-	border-left-color:#c00;
+    border-left-color: #c00;
 }
-#chart tr:nth-child(even) {background-color: #bbf}
-#chart tr:nth-child(odd) {background-color: #fff}
-#chart tr:nth-child(even) td.toggled {background-color: #fff}
-#chart tr:nth-child(odd) td.toggled {background-color: #ddddff}
+
+#chart tr:nth-child(even) {
+    background-color: #bbf
+}
+
+#chart tr:nth-child(odd) {
+    background-color: #fff
+}
+
+#chart tr:nth-child(even) td.toggled {
+    background-color: #fff
+}
+
+#chart tr:nth-child(odd) td.toggled {
+    background-color: #ddddff
+}

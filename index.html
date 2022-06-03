@@ -1,22 +1,35 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Double Face - Card Weaving Charts</title>
-<link rel="stylesheet" href="css/styles.css">
+    <title>Double Face - Card Weaving Charts</title>
+    <link rel="stylesheet" href="css/styles.css?42">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.4.7.0.css">
 </head>
 <body>
+<header>
+    <p><a href="https://github.com/julien-sebire/card-weaving-charts">CWC<span>0.1</span></a></p>
+    <ul>
+        <li id="file_menu" class="fa-file-o">
+            <div>
+                <h3>File</h3>
+                <input type="button" value="Save" onClick="saveChart();">
+                <input type="button" value="Load" onClick="loadChart();">
+            </div>
+        </li>
+        <li id="sizes_menu" class="fa-crop">
+            <div>
+                <h3>Sizes</h3>
+                <label for="cols">Cards</label> <input type="text" id="cols" value="0">
+                <br>
+                <label for="rows">Rows</label> <input type="text" id="rows" value="0">
+                <br>
+                <input type="button" value="Resize" onClick="resizeChart();">
+            </div>
+        </li>
+    </ul>
+</header>
 
-<div id="settings">
-	<label for="cols">Cards</label> <input type="text" id="cols" value="0">
-	<br>
-	<label for="rows">Rows</label> <input type="text" id="rows" value="0">
-	<br>
-	<input type="button" value="Resize" onClick="resizeChart();">
-	<hr>
-	<input type="button" value="Save" onClick="saveChart();">
-	<input type="button" value="Load" onClick="loadChart();">
-</div>
-
-<table id="chart" align="center" cellspacing="0">
+<table id="chart">
 </table>
 
 </body>
