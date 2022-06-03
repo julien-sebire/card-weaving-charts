@@ -17,7 +17,7 @@ header {
     position: relative;
 }
 
-header p {
+header>p {
     font-size: 14px;
     margin: 0;
     padding: 0;
@@ -25,7 +25,7 @@ header p {
     text-align: center;
 }
 
-header p a {
+header>p a {
     color: #ccc;
     text-decoration: none;
 }
@@ -67,6 +67,7 @@ header li div {
     left: 0;
     padding: 5px;
     position: absolute;
+    text-align: right;
     top: 35px;
 }
 
@@ -75,15 +76,26 @@ header li:hover div {
 }
 
 header li h3 {
-    border-bottom: 1px solid #666;
     color: #666;
     margin: 0 0 5px;
     min-width: 100px;
     text-align: left;
 }
 
-#sizes_menu div {
-    text-align: right;
+header li h4 {
+    border-top: 1px solid #666;
+    margin: 5px 0 5px;
+    padding-top: 5px;
+    text-align: left;
+}
+
+header li p {
+    margin: 5px 0 0;
+    white-space: nowrap;
+}
+
+#files_menu input[type="text"] {
+    width: 8em;
 }
 
 #sizes_menu input[type="text"] {
