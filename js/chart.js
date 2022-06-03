@@ -14,8 +14,11 @@ function createHtmlChart() {
 	cols = parseInt(document.getElementById('cols').value);
 	rows = parseInt(document.getElementById('rows').value);
 
-	if(cols === 0 || rows === 0) {
-		return '\t<tr><td style="white-space:nowrap;">&lt;&ndash; Please set sizes to begin.</td></tr>\n';
+	if(isNaN(cols) || cols < 1) {
+		return '\t<tr><td style="white-space:nowrap;">Please set the number of cards to at least 1 using the <span class="fa fa-crop menu_name"> Sizes</span> menu.</td></tr>\n';
+	}
+	if(isNaN(rows) || rows < 1) {
+		return '\t<tr><td style="white-space:nowrap;">Please set the number of rows to at least 1 using the <span class="fa fa-crop menu_name"> Sizes</span> menu.</td></tr>\n';
 	}
 
 	initChart(cols, rows);
