@@ -4,3 +4,5 @@
 - Draw square by square.
 - Readme, license.
 - This changelog.
+- Basic save & load. Versioning of the saving format will follow project MAJOR.MINOR version: 0.1 for now.
+- Only support for Double Face notation for the moment.

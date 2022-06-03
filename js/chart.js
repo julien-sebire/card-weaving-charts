@@ -1,3 +1,5 @@
+version = 0.1;
+notation = 'double-face';
 cells = [];
 cols = 0;
 rows = 0;
@@ -51,8 +53,22 @@ function initChart(cols, rows) {
 	
 }
 
+function redrawChart() {
+	for (let r = 0; r < rows; r++) {
+		for (let c = 0; c < cols; c++) {
+			if (cells[c][r] === 1) {
+				displayCell(c,r);
+			}
+		}
+	}
+}
+
 function toggleCell(x, y) {
 	cells[x][y] = 1 - cells[x][y];
+	displayCell(x, y);
+}
+
+function displayCell(x, y) {
 	// background
 	if(cells[x][y]) {
 		getCell(x, y).classList.add("toggled");
