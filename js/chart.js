@@ -4,16 +4,66 @@ rows = 0;
 
 function newChart() {
 	document.getElementById('filename').value = '';
+	initChart();
 	document.getElementById('chart').innerHTML = createHtmlChart();
 }
 
 function resizeChart() {
+	let [newCols, newRows] = readSizes();
+
+	if (newCols === cols && newRows === rows) {
+		return
+	}
+
+	// resize cols
+	if (newCols > cols) {
+		addCols(cols, newCols - cols);
+	}
+	if (newCols < cols) {
+		removeCols(newCols, cols - newCols);
+	}
+	cols = newCols;
+
+	// resize rows
+	if (newRows > rows) {
+		addRows(rows, newRows - rows);
+	}
+	if (newRows < rows) {
+		removeRows(newRows, rows - newRows);
+	}
+	rows = newRows;
+
 	document.getElementById('chart').innerHTML = createHtmlChart();
+	redrawChart();
+}
+
+function addCols(start, number) {
+	for (let c = start; c < start + number; c++) {
+		cells[c] = [];
+		for(let r = 0; r < rows; r++) {
+			cells[c][r] = 0;
+		}
+	}
+}
+function removeCols(start, number) {
+	cells.splice(start, number);
+}
+
+function addRows(start, number) {
+	for(let c = 0; c < cols; c++) {
+		for (let r = start; r < start + number; r++) {
+			cells[c][r] = 0;
+		}
+	}
+}
+function removeRows(start, number) {
+	for(let c = 0; c < cols; c++) {
+		cells[c].splice(start, number);
+	}
 }
 
 function createHtmlChart() {
-	cols = parseInt(document.getElementById('cols').value);
-	rows = parseInt(document.getElementById('rows').value);
+	[cols, rows] = readSizes();
 
 	if(isNaN(cols) || cols < 1) {
 		return '\t<tr><td style="white-space:nowrap;">Please set the number of cards to at least 1 using the <span class="fa fa-crop menu_name"> Sizes</span> menu.</td></tr>\n';
@@ -21,8 +71,6 @@ function createHtmlChart() {
 	if(isNaN(rows) || rows < 1) {
 		return '\t<tr><td style="white-space:nowrap;">Please set the number of rows to at least 1 using the <span class="fa fa-crop menu_name"> Sizes</span> menu.</td></tr>\n';
 	}
-
-	initChart(cols, rows);
 
 	let s = '';
 	for(let r = 0; r < rows; r++) {
@@ -37,7 +85,6 @@ function createHtmlChart() {
 				s += ' class="middle_left"';
 			}
 			s += '></td>';
-			cells[c][r] = 0;
 		}
 		s += '</tr>';
 	}
@@ -45,9 +92,10 @@ function createHtmlChart() {
 	return s;
 }
 
-function initChart(cols, rows) {
-	cells = [];
+function initChart() {
+	[cols, rows] = readSizes();
 
+	cells = [];
 	for(let c = 0; c < cols; c++) {
 		cells[c] = [];
 		for(let r = 0; r < rows; r++) {
@@ -65,6 +113,13 @@ function redrawChart() {
 			}
 		}
 	}
+}
+
+function readSizes() {
+	return [
+		parseInt(document.getElementById('cols').value),
+		parseInt(document.getElementById('rows').value)
+	];
 }
 
 function toggleCell(x, y) {

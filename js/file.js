@@ -49,7 +49,8 @@ function jsonToChart(contents, filename) {
     document.getElementById('cols').value = values.size.cols;
     document.getElementById('rows').value = values.size.rows;
     document.getElementById('filename').value = filename;
-    resizeChart();
+    initChart();
+    document.getElementById('chart').innerHTML = createHtmlChart();
     cells = values.cells;
     redrawChart();
 }
