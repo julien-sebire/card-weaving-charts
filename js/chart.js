@@ -1,10 +1,6 @@
-version = 0.1;
-notation = 'double-face';
 cells = [];
 cols = 0;
 rows = 0;
-
-resizeChart();
 
 function resizeChart() {
 	document.getElementById('chart').innerHTML = createHtmlChart();
