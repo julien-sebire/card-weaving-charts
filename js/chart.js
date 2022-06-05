@@ -2,6 +2,11 @@ cells = [];
 cols = 0;
 rows = 0;
 
+function newChart() {
+	document.getElementById('filename').value = '';
+	document.getElementById('chart').innerHTML = createHtmlChart();
+}
+
 function resizeChart() {
 	document.getElementById('chart').innerHTML = createHtmlChart();
 }
@@ -42,14 +47,14 @@ function createHtmlChart() {
 
 function initChart(cols, rows) {
 	cells = [];
-	
+
 	for(let c = 0; c < cols; c++) {
 		cells[c] = [];
 		for(let r = 0; r < rows; r++) {
 			cells[c][r] = 0;
 		}
 	}
-	
+
 }
 
 function redrawChart() {
