@@ -11,28 +11,30 @@ body {
 header {
     background: #666;
     color: #ccc;
-    height: 30px;
+    height: 40px;
     margin: 0;
-    padding: 5px 10px 10px;
+    padding: 5px;
     position: relative;
 }
 
-header>p {
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    text-align: center;
+#cwc_menu img {
+    width:30px;
 }
 
-header>p a {
-    color: #ccc;
-    text-decoration: none;
+header li p a {
+    color:#333;
+    display:block;
+    text-decoration:none;
+    width:100%;
+}
+
+header li p a:hover {
+    background-color:#ddd;
 }
 
 header ul {
     display: inline-block;
-    margin: 0 0 5px 50px;
+    margin: 0 0 5px 0;
     padding: 0;
 }
 
@@ -40,20 +42,17 @@ header li {
     border-radius: 5px 5px 0 0;
     display: inline-block;
     font-family: FontAwesome;
-    font-size: 24px;
+    font-size: 30px;
     margin: 0;
     padding: 5px 5px 10px;
     position: relative;
+    vertical-align:top;
 }
 
 header li:hover {
     background: #ccc;
     box-shadow: #333 0 -1px 2px;
     color: #666;
-}
-
-header p span {
-    display: block;
 }
 
 header li div {
@@ -67,8 +66,8 @@ header li div {
     left: 0;
     padding: 5px;
     position: absolute;
-    text-align: right;
-    top: 35px;
+    top: 40px;
+    white-space: nowrap;
 }
 
 header li:hover div {
@@ -76,22 +75,34 @@ header li:hover div {
 }
 
 header li h3 {
+    border-bottom: 1px solid #666;
     color: #666;
     margin: 0 0 5px;
+    padding-bottom:5px;
     min-width: 100px;
-    text-align: left;
 }
 
 header li h4 {
     border-top: 1px solid #666;
     margin: 5px 0 5px;
     padding-top: 5px;
-    text-align: left;
+}
+header li h4:nth-child(2) {
+    border-top: none;
+    padding-top: 0;
 }
 
 header li p {
     margin: 5px 0 0;
     white-space: nowrap;
+}
+
+header label {
+    text-align:left;
+}
+
+header input[type="button"] {
+    float:right;
 }
 
 #files_menu input[type="text"] {
