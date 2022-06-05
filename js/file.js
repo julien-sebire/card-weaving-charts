@@ -37,7 +37,7 @@ function chartToJson() {
 
 function jsonToChart(contents, filename) {
     let values = JSON.parse(contents);
-    if (values.version > version) {
+    if (values.version > parseFloat(version)) {
         alert("The chart cannot be loaded with this version of CWC. Consider updating to version " + values.version + " or later.");
         return;
     }
