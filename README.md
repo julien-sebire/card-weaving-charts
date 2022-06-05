@@ -22,8 +22,7 @@ git clone git@github.com:julien-sebire/card-weaving-charts.git
 
 ## How to use
 
-1. Select the size of the chart using the Settings box on the left.
-2. Left-click a cell to toggle it on or off the pattern.
+See [full instructions](docs/instructions.md).
 
 ## What's new
 
