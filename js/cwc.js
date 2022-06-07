@@ -1,5 +1,6 @@
 version = '0.1.0';
 notation = 'double-face';
+on_button = 0;
 
 (function(){
 	displayVersion();
