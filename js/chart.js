@@ -192,7 +192,7 @@ function checkDy(x, y, dy) {
 }
 
 // add/remove cols/rows
-function chart_srrounding(event) {
+function chart_surrounding(event) {
     let chart = document.getElementById('chart');
     let x0 = chart.getBoundingClientRect().left - document.body.getBoundingClientRect().left;
     let y0 = chart.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
@@ -271,7 +271,7 @@ function chart_srrounding(event) {
             button.style.display = "none";
     }
 }
-document.onmousemove = chart_srrounding;
+document.onmousemove = chart_surrounding;
 document.getElementById('chart_button').onmouseover = function () {
     on_button = 1;
 }
