@@ -24,14 +24,15 @@ function loadChart() {
 }
 
 function chartToJson() {
+    let data = document.getElementById('chart').data;
     return {
         "version": 0.1,
         "notation": "double-face",
         "size": {
-            "cols": cols,
-            "rows": rows
+            "cols": data.cols,
+            "rows": data.rows
         },
-        "cells": cells
+        "cells": data.cells
     }
 }
 
@@ -48,9 +49,7 @@ function jsonToChart(contents, filename) {
 
     document.getElementById('cols').value = values.size.cols;
     document.getElementById('rows').value = values.size.rows;
-    document.getElementById('filename').value = filename;
-    initChart();
-    document.getElementById('chart').innerHTML = createHtmlChart();
-    cells = values.cells;
-    redrawChart();
+    newChart(filename);
+    document.getElementById('chart').data.cells = values.cells;
+    document.getElementById('chart').redraw();
 }

@@ -21,14 +21,14 @@
         <li id="files_menu" class="fa-file-o">
             <div>
                 <h3>Files</h3>
-                <p><a href="#" onClick="newChart();">New chart</a></p>
-                <p><a href="#" onClick="loadChart();">Open chart...</a></p>
+                <p><a href="#" onclick="newChart('');">New chart</a></p>
+                <p><a href="#" onclick="loadChart();">Open chart...</a></p>
                 <h4>Current chart</h4>
                 <p>
                     <label for="filename">Name</label>
                     <input type="text" id="filename" value="untitled-chart">
                 </p>
-                <p><input type="button" value="Save" onClick="saveChart();"></p>
+                <p><input type="button" value="Save" onclick="saveChart();"></p>
             </div>
         </li>
         <li id="sizes_menu" class="fa-crop">
@@ -43,15 +43,11 @@
                     <label for="rows">Rows</label>
                     <input type="text" id="rows" value="0">
                 </p>
-                <p><input type="button" value="Resize" onClick="resizeChart();"></p>
+                <p><input type="button" value="Resize" onclick="document.getElementById('chart').resize();"></p>
             </div>
         </li>
     </ul>
 </header>
-
-<table id="chart">
-</table>
-<div id="chart_button"></div>
 
 </body>
 <script type="text/javascript" src="js/chart.js"></script>
