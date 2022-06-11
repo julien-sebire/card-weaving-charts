@@ -129,10 +129,10 @@ function createChart() {
 
 
     chart.changeView = function (view) {
-        if (view === 'pattern') {
-            this.classList.add('pattern_only');
+        if (view === 'drawing') {
+            this.classList.add('drawing');
         } else {
-            this.classList.remove('pattern_only');
+            this.classList.remove('drawing');
         }
     }
 

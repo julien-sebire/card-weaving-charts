@@ -180,28 +180,28 @@ header input[type="button"] {
     background-color: #ddf;
 }
 
-#chart.pattern_only tr td {
+#chart.drawing tr td {
     background-color: #eee;
 }
 
-#chart.pattern_only tr td.toggled {
+#chart.drawing tr td.toggled {
     background-color: #2196F3;
     border:#2196F3;
 }
 
-#chart.pattern_only tr td.middle_right {
+#chart.drawing tr td.middle_right {
     border-right-color: #eee;
 }
 
-#chart.pattern_only tr td.border_right.middle_right {
+#chart.drawing tr td.border_right.middle_right {
     border-right-color: #000;
 }
 
-#chart.pattern_only tr td.middle_left {
+#chart.drawing tr td.middle_left {
     border-left-color: #eee;
 }
 
-#chart.pattern_only tr td.border_left.middle_left {
+#chart.drawing tr td.border_left.middle_left {
     border-left-color: #000;
 }
 
