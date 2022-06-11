@@ -1,3 +1,7 @@
+## [0.1.2] - 2022-06-??
+### Added
+- Draw continuously. Holding the mouse button and moving over the chart toggles cells.
+
 ## [0.1.1] - 2022-06-07
 ### Added
 - Nicer looking menus.

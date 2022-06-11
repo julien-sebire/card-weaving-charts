@@ -2,7 +2,7 @@ function newChart(filename) {
     document.getElementById('filename').value = filename;
     let chart = document.getElementById('chart');
     if (chart !== null) {
-       chart.remove();
+        chart.remove();
     }
     createChart();
 }
@@ -10,6 +10,7 @@ function newChart(filename) {
 function createChart() {
     let chart = document.createElement('table');
     chart.id = 'chart';
+    chart.drawing = false;
     chart.data = {
         cells: [],
         cols: parseInt(document.getElementById('cols').value),
@@ -104,7 +105,26 @@ function createChart() {
 
     chart.display = function () {
         this.innerHTML = this.createHtml(this.data.cols, this.data.rows);
-        this.redraw();
+        if (this.getCell(0, 0) !== null) {
+            for (let c = 0; c < this.data.cols; c++) {
+                for (let r = 0; r < this.data.rows; r++) {
+                    let cell = this.getCell(c,r);
+                    cell.onmousedown = function () {
+                        chart.toggleCell(c, r);
+                        chart.drawing = true;
+                    }
+                    cell.onmouseenter = function () {
+                        if (chart.drawing) {
+                            chart.toggleCell(c, r);
+                        }
+                    }
+                    cell.onmouseup = function () {
+                        chart.drawing = false;
+                    }
+                }
+            }
+            this.redraw();
+        }
     }
 
     chart.createHtml = function (cols, rows) {
@@ -119,7 +139,7 @@ function createChart() {
         for (let r = 0; r < rows; r++) {
             s += '<tr>';
             for (let c = 0; c < cols; c++) {
-                s += '<td id="cell[' + c + ',' + r + ']" onclick="document.getElementById(' + "'" + 'chart' + "'" + ').toggleCell(' + c + ',' + r + ')"'
+                s += '<td id="cell[' + c + ',' + r + ']"';
                 // middle mark
                 if (c === cols / 2 - 1) {
                     s += ' class="middle_right"';
