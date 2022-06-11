@@ -127,6 +127,15 @@ function createChart() {
         }
     }
 
+
+    chart.changeView = function (view) {
+        if (view === 'pattern') {
+            this.classList.add('pattern_only');
+        } else {
+            this.classList.remove('pattern_only');
+        }
+    }
+
     chart.createHtml = function (cols, rows) {
         if (isNaN(cols) || cols < 1) {
             return '\t<tr><td style="white-space:nowrap;">Please set the number of cards to at least 1 using the <span class="fa fa-crop menu_name"> Sizes</span> menu.</td></tr>\n';

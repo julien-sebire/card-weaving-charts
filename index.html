@@ -46,6 +46,19 @@
                 <p><input type="button" value="Resize" onclick="document.getElementById('chart').resize();"></p>
             </div>
         </li>
+        <li id="view_menu" class="fa-eye">
+            <div>
+                <h3>View</h3>
+                <p>
+                    <input type="radio" id="view_drawing" name="view" onchange="document.getElementById('chart').changeView('drawing');" checked>
+                    <label for="view_drawing">Drawing</label>
+                </p>
+                <p>
+                    <input type="radio" id="view_pattern" name="view" onchange="document.getElementById('chart').changeView('pattern');">
+                    <label for="view_pattern">Pattern only</label>
+                </p>
+            </div>
+        </li>
     </ul>
 </header>
 

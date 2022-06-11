@@ -1,6 +1,7 @@
-## [0.1.2] - 2022-06-??
+## [0.1.2] - 2022-06-11
 ### Added
 - Draw continuously. Holding the mouse button and moving over the chart toggles cells.
+- Show the resulting pattern only by removing all the grid lines.
 
 ## [0.1.1] - 2022-06-07
 ### Added

@@ -18,18 +18,18 @@ header {
 }
 
 #cwc_menu img {
-    width:30px;
+    width: 30px;
 }
 
 header li p a {
-    color:#333;
-    display:block;
-    text-decoration:none;
-    width:100%;
+    color: #333;
+    display: block;
+    text-decoration: none;
+    width: 100%;
 }
 
 header li p a:hover {
-    background-color:#ddd;
+    background-color: #ddd;
 }
 
 header ul {
@@ -46,7 +46,7 @@ header li {
     margin: 0;
     padding: 5px 5px 10px;
     position: relative;
-    vertical-align:top;
+    vertical-align: top;
 }
 
 header li:hover {
@@ -78,7 +78,7 @@ header li h3 {
     border-bottom: 1px solid #666;
     color: #666;
     margin: 0 0 5px;
-    padding-bottom:5px;
+    padding-bottom: 5px;
     min-width: 100px;
 }
 
@@ -87,6 +87,7 @@ header li h4 {
     margin: 5px 0 5px;
     padding-top: 5px;
 }
+
 header li h4:nth-child(2) {
     border-top: none;
     padding-top: 0;
@@ -98,11 +99,11 @@ header li p {
 }
 
 header label {
-    text-align:left;
+    text-align: left;
 }
 
 header input[type="button"] {
-    float:right;
+    float: right;
 }
 
 #files_menu input[type="text"] {
@@ -114,9 +115,9 @@ header input[type="button"] {
 }
 
 .menu_name {
-    border:1px solid #f66;
-    display:inline-block;
-    padding:2px 5px;
+    border: 1px solid #f66;
+    display: inline-block;
+    padding: 2px 5px;
 }
 
 #chart {
@@ -164,29 +165,54 @@ header input[type="button"] {
 }
 
 #chart tr:nth-child(even) {
-    background-color: #bbf
+    background-color: #bbf;
 }
 
 #chart tr:nth-child(odd) {
-    background-color: #fff
+    background-color: #fff;
 }
 
 #chart tr:nth-child(even) td.toggled {
-    background-color: #fff
+    background-color: #fff;
 }
 
 #chart tr:nth-child(odd) td.toggled {
-    background-color: #ddddff
+    background-color: #ddf;
+}
+
+#chart.pattern_only tr td {
+    background-color: #eee;
+}
+
+#chart.pattern_only tr td.toggled {
+    background-color: #2196F3;
+    border:#2196F3;
+}
+
+#chart.pattern_only tr td.middle_right {
+    border-right-color: #eee;
+}
+
+#chart.pattern_only tr td.border_right.middle_right {
+    border-right-color: #000;
+}
+
+#chart.pattern_only tr td.middle_left {
+    border-left-color: #eee;
+}
+
+#chart.pattern_only tr td.border_left.middle_left {
+    border-left-color: #000;
 }
 
 #chart_button {
-    background-color:#fff;
-    border:1px solid #ccc;
-    font-size:14px;
-    height:16px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    height: 16px;
     cursor: pointer;
-    position:absolute;
-    text-align:center;
-    vertical-align:center;
-    width:16px;
+    position: absolute;
+    text-align: center;
+    vertical-align: center;
+    width: 16px;
 }
